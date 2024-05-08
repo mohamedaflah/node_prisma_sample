@@ -6,7 +6,9 @@ dotenv.config();
 const app: Application = express();
 app.use(express.json());
 
-app.use("/post", postRouter);
+app.use("/api/post", postRouter);
 app.use(errorHandler);
 
 app.listen(Number(process.env.PORT));
+
+export default app

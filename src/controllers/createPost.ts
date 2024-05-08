@@ -12,12 +12,12 @@ export const createPost = async (
       throw new Error("Please provide title and content");
     }
 
-    const blog = await prisma.post.create({
+    const post = await prisma.post.create({
       data: { title, content },
     });
     return res
       .status(200)
-      .json({ message: "Succesfull", data: blog, status: true });
+      .json({ message: "Succesfull", data: post, status: true });
   } catch (error) {
     next(error);
   }
